@@ -1,6 +1,6 @@
 :root {
   --container-width: 1140px;
-  --gutter: 60px;
+  --gutter: 30px;
   --spacing-sm: var(--gutter);
   --spacing-md: calc(var(--gutter) * 2);
   --spacing-lg: calc(var(--gutter) * 4);
@@ -9,6 +9,10 @@
 .container {
   width: 100%;
   margin: 0 var(--gutter) / 2;
+}
+
+.container {
+  width: 100%;
 }
 
 @include bp($bp-desktop) {
@@ -20,9 +24,7 @@
   .row {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-column-gap: var(--gutter);
-    grid-row-gap: var(--gutter);
-    margin: 0;
+    grid-gap: var(--gutter);
   }
 
   .col-1 {

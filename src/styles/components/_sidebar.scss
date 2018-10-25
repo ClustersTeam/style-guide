@@ -1,108 +1,85 @@
+$bp-xxsm: 30em;
+$bp-xsm: 40em;
+$bp-sm: 55em;
+$bp-md: 64em;
+$bp-lg: 75em;
+
+.wrapper {
+  margin-left: 0;
+  position: relative;
+  max-width: 1440px;
+  padding: 0;
+}
+
+.content {
+  clear: both;
+
+  //   @include breakpoint($bp-xsm) {
+  //     transition: all 0.5s ease-in-out;
+  //     margin: 0 0 0 325px;
+  //     clear: none;
+  //   }
+}
+
+.sidebar-collapsed + .content {
+  //   @include breakpoint($bp-xsm) {
+  //     transition: all 0.5s ease-in-out;
+  //   }
+}
+
+// Sidebar
+.sidebar.fixed,
 .sidebar {
-  overflow: hidden;
-  backface-visibility: hidden;
-  background-color: var(--true-black);
-  color: var(--true-white);
-
-  height: 100%;
-  width: 275px;
-  position: fixed;
-  //padding: 2.5rem 2rem;
-}
-
-.sidebar-inner {
-  padding: 40px 0 10px;
-}
-
-.sidebar .sidebar-collapsed {
-  overflow: hidden;
-}
-
-#sidebar-collapsed + .content {
-  margin: 0 3rem;
-}
-
-#sidebar.fixed,
-#sidebar {
-  background: #f4f4f4;
-  padding: 0 2rem;
   width: 100%;
   margin: 0 auto;
   position: relative;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   z-index: 999;
-  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   float: left;
   height: 100%;
-}
-.sidebar.fixed .sidebar-inner,
-.sidebar .sidebar-inner {
-  text-decoration: none;
-  padding-top: 0;
-  margin-top: -1rem;
-}
-@media (min-width: 40em) {
-  .sidebar.fixed,
-  .sidebar {
-    height: 100% !important;
-    width: 275px;
-    position: fixed;
-    padding: 2.5rem 2rem;
-    overflow-y: auto !important;
+
+  .sidebar-inner {
+    text-decoration: none;
+    padding-top: 0;
   }
-  .sidebar.fixed .nav,
-  .sidebar .nav {
-    padding: 0.5rem 0;
-    margin: 0.5rem 0;
-    max-height: 100%;
-    overflow-y: auto !important;
-    clear: both;
-    width: 100%;
-  }
+
+  //   @include breakpoint($bp-xsm) {
+  //     height: 100% !important;
+  //     width: 275px;
+  //     position: fixed;
+  //     overflow-y: auto !important; // needed as list grows, for wide but short screens
+
+  //     .nav {
+  //       max-height: 100%;
+  //       overflow-y: auto !important;
+  //       clear: both;
+  //       width: 100%;
+  //     }
+  //   }
 }
 
-@media (min-width: 40em) {
-  #sidebar-collapsed + .content {
-    -webkit-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    margin: 0 3rem 0 6rem;
-  }
-}
+.header {
+  background: transparent;
 
-@media (min-width: 1230px) {
-  .sidebar {
+  .site-logo {
     float: left;
-    width: 220px;
-    overflow: hidden;
-  }
+    width: 50%;
+    max-width: 150px;
+    margin-top: 0;
 
-  .sidebar.fixed {
-    position: fixed;
-    top: 0;
-  }
-
-  .sidebar.fixed .sidebar-inner {
-    padding-top: 44px;
-  }
-
-  .sidebar.fixed .nav {
-    /* Top margin (44px), logo height (68px), nav top padding (30px). */
-    max-height: calc(100vh - 44px - 68px - 30px);
-    /* Make the container scrollable. */
-    overflow-y: auto;
-    padding-right: 8px;
-    backface-visibility: hidden;
+    // @include breakpoint($bp-xsm) {
+    //   width: 100%;
+    //   max-width: 215px;
+    //   margin-bottom: 0;
+    // }
   }
 }
 
+// Sidebar toggle settings
+.sidebar,
 .nav-btn {
-  -webkit-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  overflow: visible !important;
+  overflow: visible !important; // needed to override default KSS node styling
 }
 
 .sidebar {
@@ -115,33 +92,118 @@
 
 .nav-btn {
   display: none;
-}
-@media (min-width: 40em) {
-  .nav-btn {
-    display: block;
-    position: absolute;
-    width: 32px;
-    height: 32px;
-    right: 10px;
-    top: 2px;
-    background-size: 32px;
-    border: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    background-color: #fff;
-    min-height: 0;
-  }
 
-  .nav-btn:hover,
-  .nav-btn:focus,
-  .nav-btn:active {
+  //   @include breakpoint($bp-xsm) {
+  //     display: block;
+  //     position: absolute;
+  //     width: 32px;
+  //     height: 32px;
+  //     background: url("#{$asset-path}/chevron_left_round_red.png") no-repeat;
+  //     right: 10px;
+  //     top: 2px;
+  //     background-size: 32px;
+  //     border: 0;
+  //     box-shadow: none;
+  //     background-color: transparent;
+  //     min-height: 0;
+
+  //     &:hover,
+  //     &:focus,
+  //     &:active {
+  //       border: 0;
+  //       box-shadow: none;
+  //       background-color: transparent;
+  //       cursor: pointer;
+  //       box-shadow: 0px 3px 15px $color-manatee;
+  //       border-radius: 75%;
+  //     }
+  //   }
+}
+
+.sidebar-collapsed {
+  //   @include breakpoint($bp-xsm) {
+  //     transform: translateX(-82%);
+  //     overflow-y: hidden !important;
+
+  //     .kss-menu,
+  //     .kss-header {
+  //       opacity: 0;
+  //       visibility: hidden;
+  //     }
+  //   }
+}
+
+.sidebar.fixed.sidebar-collapsed,
+.sidebar-collapsed {
+  //   @include breakpoint($bp-xsm) {
+  //     overflow-y: hidden !important;
+  //   }
+}
+
+.sidebar-collapsed .nav-btn {
+  transform: translateX(100%);
+  background-size: 32px;
+  right: 40px;
+  top: 2px;
+  background-position: 50%;
+  border: 0;
+  box-shadow: none;
+  background-color: transparent;
+  min-height: 0;
+
+  &:hover,
+  &:focus,
+  &:active {
     border: 0;
-    -webkit-box-shadow: none;
     box-shadow: none;
-    background-color: #fff;
+    background-color: transparent;
     cursor: pointer;
-    -webkit-box-shadow: 0px 3px 15px #888b8d;
-    box-shadow: 0px 3px 15px #888b8d;
+    box-shadow: 0px 3px 15px #000;
     border-radius: 75%;
   }
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap; // *
+  width: 1px;
+  // *
+  // ensures that words don't get
+  // combined together by ATs
+}
+
+// back to top styling
+.back-to-top {
+  background-color: transparent;
+  bottom: 12px;
+  height: 2.5rem;
+  width: 2.5rem;
+  position: fixed;
+  right: 9px;
+  transform: translateY(130%);
+  transition: transform 0.5s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: 42px;
+  border-radius: 50%;
+  background-position: 50%;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 0;
+    box-shadow: none;
+    cursor: pointer;
+    box-shadow: 0px 3px 15px;
+    border-radius: 50%;
+  }
+}
+
+.show-back-to-top .back-to-top {
+  transform: translateY(0%);
 }

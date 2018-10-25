@@ -1,0 +1,55 @@
+{
+  "name": "style-guide",
+  "version": "1.0.0",
+  "description": "- Package manager - npm 6/8\r   - Task runner - Gulp\r   - Templating - Next.js / Handlebars\r   - Reinforce frontend style - Linters and Prettier",
+  "main": "gulpfile.babel.js",
+  "scripts": {
+    "dev": "node_modules/.bin/gulp dev --env dev",
+    "prod": "node_modules/.bin/gulp --env prod",
+    "watch": "node_modules/.bin/gulp watch --env dev",
+    "test": "node_modules/.bin/gulp tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClustersTeam/style-guide.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ClustersTeam/style-guide/issues"
+  },
+  "homepage": "https://github.com/ClustersTeam/style-guide#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "fibers": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-size": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-stylelint": "^7.0.0",
+    "gulp-uglify": "^3.0.1",
+    "handlebars": "^4.0.12",
+    "handlebars-layouts": "^3.1.4",
+    "require-dir": "^1.1.0",
+    "stylelint": "^9.6.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^1.0.0",
+    "stylelint-scss": "^3.3.2"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}

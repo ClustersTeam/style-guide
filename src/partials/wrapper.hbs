@@ -1,0 +1,20 @@
+{{#extend "base"}}
+{{#content "main" mode="prepend"}}
+
+<div class="wrapper">
+    {{>sidebar}}
+
+    <main id="main-content" class="content" aria-label="content">
+        <article class="article">
+            {{#block "article"}}{{/block}}
+        </article>
+    </main>
+
+    <a href="main-content" class="back-to-top">
+        <span class="visuallyhidden">
+            Back to top
+        </span>
+    </a>
+</div> <!-- /.wrapper -->
+{{/content}}
+{{/extend}}

@@ -1,4 +1,6 @@
 :root {
+  --base-font: "Quicksand", sans-serif;
+
   --fs-base: 16px;
   --base-line-height: 1.666;
   --fraction: 1.333;
@@ -46,7 +48,6 @@ h6 {
   color: var(--brand);
   font-family: var(--heading-font);
   line-height: var(--base-line-height);
-  text-transform: uppercase;
   font-weight: 500;
 }
 

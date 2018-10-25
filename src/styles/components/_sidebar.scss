@@ -14,6 +14,64 @@
   padding: 40px 0 10px;
 }
 
+.sidebar .sidebar-collapsed {
+  overflow: hidden;
+}
+
+#sidebar-collapsed + .content {
+  margin: 0 3rem;
+}
+
+#sidebar.fixed,
+#sidebar {
+  background: #f4f4f4;
+  padding: 0 2rem;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 999;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  float: left;
+  height: 100%;
+}
+.sidebar.fixed .sidebar-inner,
+.sidebar .sidebar-inner {
+  text-decoration: none;
+  padding-top: 0;
+  margin-top: -1rem;
+}
+@media (min-width: 40em) {
+  .sidebar.fixed,
+  .sidebar {
+    height: 100% !important;
+    width: 275px;
+    position: fixed;
+    padding: 2.5rem 2rem;
+    overflow-y: auto !important;
+  }
+  .sidebar.fixed .nav,
+  .sidebar .nav {
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+    max-height: 100%;
+    overflow-y: auto !important;
+    clear: both;
+    width: 100%;
+  }
+}
+
+@media (min-width: 40em) {
+  #sidebar-collapsed + .content {
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    margin: 0 3rem 0 6rem;
+  }
+}
+
 @media (min-width: 1230px) {
   .sidebar {
     float: left;
@@ -37,5 +95,53 @@
     overflow-y: auto;
     padding-right: 8px;
     backface-visibility: hidden;
+  }
+}
+
+.nav-btn {
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  overflow: visible !important;
+}
+
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.nav-btn {
+  display: none;
+}
+@media (min-width: 40em) {
+  .nav-btn {
+    display: block;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    right: 10px;
+    top: 2px;
+    background-size: 32px;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: #fff;
+    min-height: 0;
+  }
+
+  .nav-btn:hover,
+  .nav-btn:focus,
+  .nav-btn:active {
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: #fff;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 3px 15px #888b8d;
+    box-shadow: 0px 3px 15px #888b8d;
+    border-radius: 75%;
   }
 }

@@ -16,9 +16,6 @@
   overflow: hidden;
   backface-visibility: hidden;
 }
-.sidebar-inner {
-  padding: 40px 0 10px;
-}
 .sidebar-header {
   background: #fff;
 }
@@ -38,6 +35,9 @@
   margin: 30px 0;
 }
 .sidebar-menu {
+  display: block;
+  float: left;
+  width: 100%;
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -137,13 +137,14 @@
 }
 
 @media (min-width: 650px) {
-    .sidebar.sidebar-fixed, .sidebar {
-        height: 100% !important;
-        width: 275px;
-        position: fixed;
-        padding: 2.5rem 2rem;
-        overflow-y: auto !important;
-    }
+  .sidebar.sidebar-fixed,
+  .sidebar {
+    height: 100% !important;
+    width: 275px;
+    position: fixed;
+    padding: 0 30px 30px 30px;
+    overflow-y: auto !important;
+  }
 }
 
 @media (min-width: 1230px) {

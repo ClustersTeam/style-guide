@@ -59,13 +59,18 @@ $bp-lg: 75em;
 }
 
 .header {
-  background: transparent;
+  display: block;
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #000000;
 
   .site-logo {
-    float: left;
-    width: 50%;
-    max-width: 150px;
-    margin-top: 0;
+    padding: 20px 10px 10px 10px;
+    svg {
+      width: 100% !important;
+      height: 150px !important;
+    }
 
     // @include breakpoint($bp-xsm) {
     //   width: 100%;

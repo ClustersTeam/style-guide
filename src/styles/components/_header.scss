@@ -1,3 +1,19 @@
 .header {
   text-align: center;
 }
+
+.header {
+  display: block;
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #000000;
+
+  .site-logo {
+    padding: 20px 10px 10px 10px;
+    svg {
+      width: 100% !important;
+      height: 150px !important;
+    }
+  }
+}

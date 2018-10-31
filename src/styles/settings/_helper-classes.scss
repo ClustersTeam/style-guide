@@ -4,3 +4,20 @@
   border: 1px solid #fff;
   color: #fff;
 }
+
+.link--new-tab {
+
+  &:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    margin-left: 5px;
+    content: "\f35d";
+  }
+}

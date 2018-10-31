@@ -1,5 +1,7 @@
 $bp-phone: '(max-width: 478px)';
+$bp-phone-up: '(min-width: 478px)';
 $bp-mobile: '(max-width: 680px)';
+$bp-mobile-up: '(min-width: 680px)';
 $bp-tablet: '(min-width: 768px)';
 $bp-laptop: '(min-width: 940px)';
 $bp-desktop: '(min-width: 1336px)';
@@ -14,11 +16,19 @@ $bp-desktop: '(min-width: 1336px)';
     @media #{$bp-mobile} {
       @content;
     }
+  }@else if $point == $bp-mobile-up {
+    @media #{$bp-mobile-up} {
+      @content;
+    }
   } @else if $point == $bp-phone {
     @media #{$bp-phone} {
       @content;
     }
-  } @else if $point == $bp-laptop {
+  } @else if $point == $bp-phone-up {
+    @media #{$bp-phone-up} {
+      @content;
+    }
+  }@else if $point == $bp-laptop {
     @media #{$bp-laptop} {
       @content;
     }

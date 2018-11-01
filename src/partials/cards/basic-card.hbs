@@ -1,7 +1,16 @@
 <section class="card">
   <div class="card__link-wrapper">
     <div class="card__image">
-        <img src="http://a11y-style-guide.com/assets/angry-pepper.jpg" alt="Alt" />
+        <img sizes="(max-width: 479px) 280px,
+                        (max-width: 680px) 540px,
+                        (max-width: 768px) 660px,
+                        (max-width: 1366px) 1024px,
+                        1920px" srcset="http://a11y-style-guide.com/assets/angry-pepper.jpg 479w,
+                        http://a11y-style-guide.com/assets/angry-pepper.jpg 549w,
+                        http://a11y-style-guide.com/assets/angry-pepper.jpg 768w,
+                        http://a11y-style-guide.com/assets/angry-pepper.jpg 1024w,
+                        http://a11y-style-guide.com/assets/angry-pepper.jpg 1366w,
+                        http://a11y-style-guide.com/assets/angry-pepper.jpg" alt="Alt" />
     </div>
     <div class="card__title">
       <a target="_blank" href="{{ link }}" class="card__title--link link--new-tab">More about angry pepper</a>

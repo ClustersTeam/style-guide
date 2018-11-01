@@ -6,7 +6,6 @@ $bp-tablet: '(min-width: 768px)';
 $bp-laptop: '(min-width: 940px)';
 $bp-desktop: '(min-width: 1336px)';
 
-// Media Queries
 @mixin bp($point) {
   @if $point == $bp-desktop {
     @media #{$bp-desktop} {

@@ -1,23 +1,22 @@
 // Helper classes
 .bg-dark {
-  background-color: #c72626;
   border: 1px solid #fff;
-  color: #fff;
+  background-color: #c72626;
+  color: var(--true-white);
 }
 
 .link--new-tab {
-
   &:after {
+    margin-left: 5px;
+    content: "\f35d";
     font-family: "Font Awesome 5 Free";
+    line-height: 1;
     font-weight: 900;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     display: inline-block;
-    font-style: normal;
     font-variant: normal;
+    font-style: normal;
     text-rendering: auto;
-    line-height: 1;
-    margin-left: 5px;
-    content: "\f35d";
   }
 }

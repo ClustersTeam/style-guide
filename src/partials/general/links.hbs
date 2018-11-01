@@ -1,0 +1,72 @@
+<section id="ref-general-links">
+    <h2><a href="#ref-general-link">Links</a></h2>
+
+    <div class="description">
+        <ul>
+            <li>Do not set your site's link focus to <code>outline: none</code>. Never. Ever.</li>
+            <li>If you have multiple form fields on your site or you see the dreaded <code>outline: none</code> in your base code, you can reset the browser defaults by adding the code:</li>
+        </ul>
+
+        <pre> a:focus { 
+        outline: auto 2px Highlight; // for non-webkit browsers
+        outline: auto 5px -webkit-focus-ring-color; // for webkit browsers
+        }
+        </pre>
+
+        <ul>
+            <li>Of course you can create your own focus styles to match your theme or to make the default browser styles more prominent, just make sure they are visible by tabbing and obvious to your users.</li>
+            <li>Add id selectors to titles or paragraphs and use <code>aria-labelledby=""</code> to link to the title text (Example #1).</li>
+            <li>Add decriptive text with <code>aria-label=""</code> directly in the link (Example #2).</li>
+            <li>Add id selectors to titles or paragraphs and use <code>aria-describedby=""</code> to link to the title text (Example #3).</li>
+            <li>Use the class <code>visuallyhidden</code> to visually hide more information about the link (Example #4).</li>
+            <li>Turn read more links into buttons, when you can, since they allow for more labeling options.</li>
+        </ul>
+
+        <section data-action="aria-toggle" class="atblock">
+            <h4 class="atblock__title">
+                <a href="#focus_guide" class="atblock__title__trigger" role="button" aria-controls="focus_guide" aria-expanded="false">WCAG 2.0 Guidelines</a>
+            </h4>
+
+            <div id="focus_guide" class="atblock__panel guidelines" aria-hidden="true">
+                <ul>
+                    <li><a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=131#navigation-mechanisms-focus-visible" target="_blank">2.4.7 Focus Visible</a> - Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible. (Level AA)</li>
+                    <li><a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=131#navigation-mechanisms-refs" target="_blank">2.4.4 Link Purpose (In Context)</a>: The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link context, except where the purpose of the link would be ambiguous to users in general. (Level A)</li>
+                    <li><a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=131#navigation-mechanisms-link" target="_blank">2.4.9 Link Purpose (Link Only)</a>: A mechanism is available to allow the purpose of each link to be identified from link text alone, except where the purpose of the link would be ambiguous to users in general. (Level AAA)</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div class="modifier-block">
+        <div class="modifier modifier-original">
+            <div class="modifier-example">
+                <section>
+                    <h3>Example #0: Link focus</h3>
+                    <a href="#">Hey! I'm a cool, focusable link</a>
+
+                    <h3>Example #1: Using aria-labelledby</h3>
+                    <h4 id="headline" class="bold">Storms Hit East Coast</h4>
+                    <p>Torrential rain and gale force winds have struck the east coast, causing flooding in many coastal towns. <a href="#" aria-labelledby="headline" class="read-more">Read More</a></p>
+                    <div class="break"></div>
+
+                    <h3>Example #2: Using aria-label</h3>
+                    <h4 class="bold">Black Bears Trapped in Cars</h4>
+                    <p>Over the past three weeks there have been 15 reports or black bears getting themselves trapped in vehicles. There are several ways to prevent this from happening to you. <a href="#" aria-label="Learn more about trapped black bears" class="read-more">Read More</a></p>
+                    <div class="break"></div>
+
+                    <h3>Example #3: Using aria-describedby</h3>
+                    <h4 class="bold">Can I have a badge?</h4>
+                    <p>Badges? We ain't got no badges! We don't need no badges! I don't have to show you any stinking badges!
+                    </p><p id="info" class="visuallyhidden">This is a quote from the 1948 movie The Treasure of the Sierra Madre.</p><p><a href="#" aria-describedby="info" class="read-more">Read More</a></p>
+                    <div class="break"></div>
+
+                    <h3>Example #4: Using visually hidden text</h3>
+                    <h4 class="bold">Mass Hysteria</h4>
+                    <p>Fire and brimstone, coming down from the skies. Rivers and seas boiling... Human sacrifice, dogs and cats, living together...
+                    </p><p class="visuallyhidden">This is a quote from the 1984 movie Ghostbusters.</p><p>
+                    <a href="#" class="read-more">Read More<span class="visuallyhidden"> about mass hysteria in relation to movie quotes</span></a></p>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>

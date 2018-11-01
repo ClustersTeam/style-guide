@@ -1,0 +1,161 @@
+// Base styling for click cards
+.cards {
+    margin: 0 auto;
+
+    @include bp($bp-desktop) {
+        max-width: 1200px;
+    }
+    .l-center {
+        padding: 0;
+        margin: 0 auto;
+        clear: both;
+    }
+    button {
+        background-color: transparent;
+        border: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.cards__content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -0.5rem;
+
+    @include bp($bp-mobile-up) {
+      margin: 0 -1rem;
+    }
+}
+
+
+.cards__column {
+    min-height: 300px;
+    padding: 1rem;
+    flex: 1 100%;
+    box-sizing: border-box;
+
+    @include bp($bp-phone-up) {
+        flex: 0 1 50%;
+      }
+
+      @include bp($bp-tablet) {
+        flex: 1;
+      }
+}
+
+.cards button {
+    background-color: transparent;
+    border: 0;
+    width: 100%;
+}
+
+.cards__item {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+    max-height: 300px;
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+
+.cards__item-image {
+    margin: auto;
+    display: block;
+    height: 170px;
+    width: 100%;
+
+    img {
+        display: block;
+        margin: 0 auto;
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.cards--slideout .cards__item-title {
+    text-align: center;
+}
+
+.cards__item-title {
+    margin: 0;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    clear: both;
+    padding: 0.5rem;
+    text-align: center;
+    display: flex;
+    line-height: 1;
+    height: 85px;
+}
+
+.toggleflip {
+    position: relative;
+    display: inline-block;
+    line-height: 1.2;
+  }
+  
+  .toggleflip [aria-hidden] {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  .toggleflip [aria-hidden='false'] {
+    display: inline-block;
+    z-index: 2;
+  }
+  
+  .card__back[aria-hidden='false'] {
+    transform-origin: center top;
+    animation-duration: $anim-speed-moderate;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+  }
+  
+  .card__front,
+  .card__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 250px;
+    backface-visibility: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .card__back {
+    transform: rotateY(-180deg);
+    position: absolute;
+    padding: $padding-sm 1.5rem;
+    background: $color-white;
+  
+    .cards__item-description {
+      height: 155px;
+      transform: rotateY(-180deg);
+      visibility: hidden;
+    }
+  }
+  
+  .card__front {
+    transform: rotateY(0deg);
+  }
+  
+  .card.effect__click.flipped .card__front {
+    transform: rotateY(0deg);
+  }
+  
+  .card.effect__click.flipped .card__back {
+    transform: scale(1, 1);
+  
+    .cards__item-description {
+      visibility: visible;
+      transform: rotateY(0deg);
+    }
+  }

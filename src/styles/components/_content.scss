@@ -6,6 +6,14 @@ body {
   overflow: hidden;
 }
 
+.section {
+  margin: 0;
+  border: 0;
+  float: left;
+  clear: both;
+  width: 100%;
+}
+
 @media (min-width: 650px) {
   .content {
     padding-right: 0.5rem;

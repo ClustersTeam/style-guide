@@ -14,7 +14,6 @@
   })
 
   var scrollHandler = function () {
-    // $html.addClass('show-back-to-top')
     if ($html.scrollTop() >= 200 && !$html.hasClass('show-back-to-top')) {
       $html.addClass('show-back-to-top')
     } else if ($html.scrollTop() <= 200) {
@@ -25,7 +24,7 @@
 
   scrollHandler()
 
-  var backToTop = $('.back-to-top').on('click', function () {
+  $('.back-to-top').on('click', function () {
     var $targetNode = $(this).attr('href').split('h1')[1]
     $('h1' + $targetNode).attr('tabindex', '-1')
     $html.removeClass('show-back-to-top')

@@ -14,7 +14,7 @@ test('displays a user after a click', () => {
   // This module has a side-effect
   const $ = require('jquery');
 
-  // prevent jQuery is undefined
+  // neded when using IFFE with (jQuery)
   window.jQuery = $;
 
   // i

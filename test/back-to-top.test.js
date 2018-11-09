@@ -8,6 +8,8 @@ describe('Expect to apply class when scroll reaches 200px', () => {
     
     // require jQuery before other files 
     const $ = require('jquery');
+
+    // neded when using IFFE with (jQuery) 
     window.jQuery = $;
     
     var scrollHandler = require('../src/scripts/back-to-top');

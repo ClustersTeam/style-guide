@@ -7,7 +7,8 @@
     "dev": "node_modules/.bin/gulp dev --env dev",
     "prod": "node_modules/.bin/gulp --env prod",
     "watch": "node_modules/.bin/gulp watch --env dev",
-    "test": "node_modules/.bin/gulp tests"
+    "test": "node_modules/.bin/gulp tests",
+    "jest": "jest"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,8 @@
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "babel-register": "^6.26.0",
     "browser-sync": "^2.26.3",
     "del": "^3.0.0",
     "fibers": "^3.0.0",
@@ -43,6 +46,7 @@
     "gulp-uglify": "^3.0.1",
     "handlebars": "^4.0.12",
     "handlebars-layouts": "^3.1.4",
+    "jest": "^23.6.0",
     "require-dir": "^1.1.0",
     "stylelint": "^9.6.0",
     "stylelint-config-standard": "^18.2.0",

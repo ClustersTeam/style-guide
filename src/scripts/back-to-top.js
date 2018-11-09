@@ -14,20 +14,18 @@
   })
 
   var scrollHandler = function () {
-    if ($win.scrollTop() >= 200 && !$html.hasClass('show-back-to-top')) {
+    // $html.addClass('show-back-to-top')
+    if ($html.scrollTop() >= 200 && !$html.hasClass('show-back-to-top')) {
       $html.addClass('show-back-to-top')
-    } else if ($win.scrollTop() <= 200) {
+    } else if ($html.scrollTop() <= 200) {
       $html.removeClass('show-back-to-top')
     }
   }
-
-  if ($win.scrollTop() >= 200) {
-    $html.addClass('show-back-to-top')
-  }
+  module.exports = scrollHandler;
 
   scrollHandler()
 
-  $('.back-to-top').on('click', function () {
+  var backToTop = $('.back-to-top').on('click', function () {
     var $targetNode = $(this).attr('href').split('h1')[1]
     $('h1' + $targetNode).attr('tabindex', '-1')
     $html.removeClass('show-back-to-top')
